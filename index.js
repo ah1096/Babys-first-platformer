@@ -6,6 +6,14 @@ canvas.width = 64 * 16 //1024
 canvas.height = 64 * 9 //576
 
 
+const backgroundLevel1 = new Sprite({
+    position: {
+        x: 0,
+        y: 0,
+    },
+    imageSrc: './img/backgroundLevel1.png'
+})
+
 const player = new Player()
 
 const keys = {
@@ -22,8 +30,8 @@ const keys = {
 
 function animate() {
     window.requestAnimationFrame(animate) // create animation loop
-    c.fillStyle= 'white'
-    c.fillRect(0, 0, canvas.width, canvas.height) //redraw background to "clear" the canvas
+
+    backgroundLevel1.draw()
 
     player.velocity.x = 0
     if (keys.d.pressed) player.velocity.x = 5 //change this value to change player speed
