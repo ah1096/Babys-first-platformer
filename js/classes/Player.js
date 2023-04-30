@@ -16,6 +16,7 @@ class Player {
         this.sides = {
             bottom: this.position.y + this.height,
         }
+        this.gravity = 1
     }
 
     // what does the player look like?
@@ -30,7 +31,7 @@ class Player {
 
         //above bottom of canvas
         if (this.sides.bottom + this.velocity.y < canvas.height){
-            this.velocity.y += 1
+            this.velocity.y += this.gravity
             this.sides.bottom = this.position.y + this.height
         } else {
             this.velocity.y = 0
