@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    body {
+        background: black;
+    }
+</style>
+
+<body>
+
+    <canvas></canvas>
+
+</body>
+
+<script>
+    const canvas = document.querySelector('canvas')
+    const c = canvas.getContext('2d')
+
+    //set canvas aspect ratio to 16x9; game uses 64x64px tiles, so width= 64*16 and height=64*9
+    canvas.width = 64 * 16 //1024
+    canvas.height = 64 * 9 //576
+
+    // fill rectangle with color
+    c.fillStyle= 'white'
+    //fillRect takes four arguments to draw a rectangle(x, y, width, height)
+    c.fillRect(0, 0, canvas.width, canvas.height)
+</script>
+
+</html>
+
+
+
