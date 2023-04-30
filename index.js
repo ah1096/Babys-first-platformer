@@ -5,16 +5,6 @@ const c = canvas.getContext('2d')
 canvas.width = 64 * 16 //1024
 canvas.height = 64 * 9 //576
 
-class Sprite {
-    constructor({position, imageSrc}) { //using object syntax so that you can easily add position to each new instance
-        this.position = position
-        this.image = new Image()
-        this.image.src = imageSrc
-    }
-    draw() {
-        c.drawImage(this.image, this.position.x, this.position.y) //render a JS Image() object + position on x and y axes
-    }
-}
 
 const backgroundLevel1 = new Sprite({
     position: {
