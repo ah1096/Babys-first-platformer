@@ -8,6 +8,18 @@ canvas.height = 64 * 9 //576
 
 const player = new Player()
 
+const keys = {
+    w: {
+        pressed: false,
+    },
+    a: {
+        pressed: false,
+    },
+    d: {
+        pressed: false,
+    },
+}
+
 function animate() {
     window.requestAnimationFrame(animate) // create animation loop
     c.fillStyle= 'white'
@@ -21,8 +33,28 @@ animate()
 
 window.addEventListener('keydown', (event) => {
     switch (event.key){
-        case 'w':
-            player.velocity.y = -10
+        case 'w': //move player up
+            if (player.velocity.y === 0)
+            player.velocity.y = -20 //adjust jump height here
             break
+        case 'a': //move player left
+            player.velocity.x = -4
+            break
+        case 'd': //move player right
+            player.velocity.x = 4
+            break
+
+    }
+})
+
+window.addEventListener('keyup', (event) => {
+    switch (event.key){
+        case 'a': //move player left
+            player.velocity.x = 0
+            break
+        case 'd': //move player right
+            player.velocity.x = 0
+            break
+
     }
 })
