@@ -25,36 +25,12 @@ function animate() {
     c.fillStyle= 'white'
     c.fillRect(0, 0, canvas.width, canvas.height) //redraw background to "clear" the canvas
 
+    player.velocity.x = 0
+    if (keys.d.pressed) player.velocity.x = 5 //change this value to change player speed
+    else if (keys.a.pressed) player.velocity.x = -5
+
     player.draw()
     player.update()
 }
 
 animate()
-
-window.addEventListener('keydown', (event) => {
-    switch (event.key){
-        case 'w': //move player up
-            if (player.velocity.y === 0)
-            player.velocity.y = -20 //adjust jump height here
-            break
-        case 'a': //move player left
-            player.velocity.x = -4
-            break
-        case 'd': //move player right
-            player.velocity.x = 4
-            break
-
-    }
-})
-
-window.addEventListener('keyup', (event) => {
-    switch (event.key){
-        case 'a': //move player left
-            player.velocity.x = 0
-            break
-        case 'd': //move player right
-            player.velocity.x = 0
-            break
-
-    }
-})
