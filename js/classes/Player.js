@@ -12,8 +12,7 @@ class Player extends Sprite {
             y: 0,
         }
 
-        this.width = 25
-        this.height = 25
+
         this.sides = {
             bottom: this.position.y + this.height,
         }
@@ -24,6 +23,8 @@ class Player extends Sprite {
 
     // what properties within the player class should be altered over time?
     update() {
+        c.fillStyle = 'blue'
+        c.fillRect(this.position.x, this.position.y, this.width, this.height)
         this.position.x += this.velocity.x
 
         this.checkForHorizontalCollisions()
