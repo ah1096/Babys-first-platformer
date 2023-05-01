@@ -1,7 +1,7 @@
 class Player extends Sprite {
     // what properties are associated with each player?
-    constructor({collisionBlocks =[], imageSrc, frameRate, animations}) {
-        super({imageSrc, frameRate, animations}) //call Sprite's constructor
+    constructor({collisionBlocks =[], imageSrc, frameRate, animations, loop}) {
+        super({imageSrc, frameRate, animations, loop}) //call Sprite's constructor
         this.position = {
             x: 200,
             y: 200,
@@ -46,12 +46,32 @@ class Player extends Sprite {
         this.checkForVerticalCollisions()
     }
 
+    handleInput(keys) {
+        if (this.preventInput) {return}
+        this.velocity.x = 0
+        if (keys.d.pressed) {
+            this.velocity.x = 5 //change this value to change player speed
+            this.switchSprite('runRight')
+            this.lastDirection = 'right'
+        } else if (keys.a.pressed) {
+            this.velocity.x = -5
+            this.switchSprite('runLeft')
+            this.lastDirection = 'left'
+        } else {
+            if (this.lastDirection === 'left'){
+                this.switchSprite('idleLeft')
+            } else {
+                this.switchSprite('idleRight')}
+        }
+    }
+
     switchSprite(name) {
         if (this.image === this.animations[name].image) return
         this.currentFrame = 0
         this.image = this.animations[name].image
         this.frameRate = this.animations[name].frameRate
         this.frameBuffer = this.animations[name].frameBuffer
+        this.loop = this.animations[name].loop
     }
 
     updateHitbox() {
