@@ -70,13 +70,18 @@ class Player extends Sprite {
             ) {
                 //collision on x axis going to the left
                 if (this.velocity.x < 0){
-                    this.position.x = collisionBlock.position.x + collisionBlock.width + 0.01 // move player to RIGHT side of block; 0.01 adds buffer between objects
+                    const offset = this.hitbox.position.x - this.position.x
+                    this.position.x = 
+                        collisionBlock.position.x + collisionBlock.width -offset + 0.01 // move player to RIGHT side of block; 0.01 adds buffer between objects
                     break // break out of for loop bc it's inefficient to keep running it when collision detected
                 }
     
                 //collision on x axis going to the right
                 if (this.velocity.x > 0){
-                    this.position.x = collisionBlock.position.x - this.width - 0.01
+                    const offset=
+                        this.hitbox.position.x - this.position.x + this.hitbox.width
+                    this.position.x = 
+                        collisionBlock.position.x - offset - 0.01
                     break
                 }
                 }
