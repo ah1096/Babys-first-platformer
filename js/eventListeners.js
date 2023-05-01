@@ -16,6 +16,7 @@ window.addEventListener('keydown', (event) => {
                     player.velocity.y = 0
                     player.preventInput = true //player can't move around
                     player.switchSprite('enterDoor')
+                    door.play() //begins door's animation loop; it opens
                     return 
                 }
             }
