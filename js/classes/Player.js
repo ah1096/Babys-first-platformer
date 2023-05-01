@@ -37,7 +37,7 @@ class Player extends Sprite {
                 x: this.position.x + 58, //adjust side position of hitbox
                 y: this.position.y + 34, //adjust vertical position of hitbox
             },
-            // adjust actual size of hitbox VV
+            // adjust actual size of hitbox
             width: 50,
             height: 53,
         }
@@ -87,22 +87,25 @@ class Player extends Sprite {
             const collisionBlock = this.collisionBlocks[i]
 
             //same as checkHorizontal; checks collisions on all sides of player
-            if (this.position.x <= collisionBlock.position.x + collisionBlock.width && // LEFT of player vs RIGHT of block
-                this.position.x + this.width >= collisionBlock.position.x && // RIGHT of player vs LEFT of block
-                this.position.y + this.height >= collisionBlock.position.y && // BOTTOM of player vs TOP of block
-                this.position.y <= collisionBlock.position.y + collisionBlock.height // TOP of player vs BOTTOM of block
+            if (this.hitbox.position.x <= collisionBlock.position.x + collisionBlock.width && // LEFT of player vs RIGHT of block
+                this.hitbox.position.x + this.hitbox.width >= collisionBlock.position.x && // RIGHT of player vs LEFT of block
+                this.hitbox.position.y + this.hitbox.height >= collisionBlock.position.y && // BOTTOM of player vs TOP of block
+                this.hitbox.position.y <= collisionBlock.position.y + collisionBlock.height // TOP of player vs BOTTOM of block
             ) {
                 //collision on y axis going UP
                 if (this.velocity.y < 0){
                     this.velocity.y = 0 // added to prevent y velocity from increasing w/ added gravity; prevent player clipping through to bottom after jumping
-                    this.position.y = collisionBlock.position.y + collisionBlock.height + 0.01 // TOP of player hits BOTTOM of block; push player down 0.01
+                    const offset = this.hitbox.position.y - this.position.y
+                    this.position.y = collisionBlock.position.y + collisionBlock.height -offset + 0.01 // TOP of player hits BOTTOM of block; push player down 0.01
                     break 
                 }
 
                 //collision on y axis going DOWN
                 if (this.velocity.y > 0){
                     this.velocity.y = 0
-                    this.position.y = collisionBlock.position.y - this.height - 0.01 //BOTTOM of player hits TOP of block; push player up 0.01
+                    const offset = 
+                        this.hitbox.position.y - this.position.y + this.hitbox.height
+                    this.position.y = collisionBlock.position.y - offset - 0.01 //BOTTOM of player hits TOP of block; push player up 0.01
                     break
                 }
             }
