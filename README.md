@@ -9,3 +9,6 @@ https://www.html5canvastutorials.com/tutorials/html5-canvas-element/#:~:text=The
 
 Javascript switch case:
 https://www.w3schools.com/js/js_switch.asp
+
+Tiled map editor:
+https://www.mapeditor.org/
