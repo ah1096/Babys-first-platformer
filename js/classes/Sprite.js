@@ -12,6 +12,14 @@ class Sprite {
     }
     draw() {
         if (!this.loaded) return
+        const cropbox = { 
+            position: {
+                x: 0,
+                y: 0,
+            },
+            width: this.width,
+            height: this.height,
+        }
         c.drawImage(this.image, this.position.x, this.position.y) //render a JS Image() object + position on x and y axes
     }
 }
