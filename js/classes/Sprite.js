@@ -20,6 +20,16 @@ class Sprite {
             width: this.width,
             height: this.height,
         }
-        c.drawImage(this.image, this.position.x, this.position.y) //render a JS Image() object + position on x and y axes
+        c.drawImage(
+            this.image, 
+            cropbox.position.x, //x-position of crop
+            cropbox.position.y, //y-position of crop
+            cropbox.width,
+            cropbox.height, 
+            this.position.x, //x of where image is rendered
+            this.position.y, // y of where image is rendered
+            this.width, //actual width of the image
+            this.height //actual height of the image
+            )
     }
 }
