@@ -12,3 +12,9 @@ https://www.w3schools.com/js/js_switch.asp
 
 Tiled map editor:
 https://www.mapeditor.org/
+
+COLLISION DETECTION:
+1. check horizontal axis for collision with player
+2. apply gravity
+3. check for vertical collisions
+4. update and loop

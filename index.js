@@ -18,7 +18,9 @@ const backgroundLevel1 = new Sprite({
     imageSrc: './img/backgroundLevel1.png'
 })
 
-const player = new Player()
+const player = new Player({
+    collisionBlocks, //refers to const defined above; same name so basically this is the same as collisionBlocks = collisionBlocks
+})
 
 const keys = {
     w: {
