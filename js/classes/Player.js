@@ -32,17 +32,17 @@ class Player {
     // what properties within the player class should be altered over time?
     update() {
         this.position.x += this.velocity.x
+
         this.checkForHorizontalCollisions()
         this.applyGravity()
         this.checkForVerticalCollisions()
-
     }
 
     checkForHorizontalCollisions() {
         for (let i = 0; i < this.collisionBlocks.length; i++) {
             const collisionBlock = this.collisionBlocks[i] //check for collision between this one block and player's position
     
-            //if a collision exists: if the left side of the player is <= right side of collision block, the two are colliding from left side of player
+            //check for collisions on all sides of Player
             if (this.position.x <= collisionBlock.position.x + collisionBlock.width && // LEFT of player vs RIGHT of block
                 this.position.x + this.width >= collisionBlock.position.x && // RIGHT of player vs LEFT of block
                 this.position.y + this.height >= collisionBlock.position.y && // BOTTOM of player vs TOP of block
@@ -69,11 +69,10 @@ class Player {
     }
 
     checkForVerticalCollisions() {
-
         for (let i = 0; i < this.collisionBlocks.length; i++) {
             const collisionBlock = this.collisionBlocks[i]
 
-            //same as x axis; checks collisions on all sides of player
+            //same as checkHorizontal; checks collisions on all sides of player
             if (this.position.x <= collisionBlock.position.x + collisionBlock.width && // LEFT of player vs RIGHT of block
                 this.position.x + this.width >= collisionBlock.position.x && // RIGHT of player vs LEFT of block
                 this.position.y + this.height >= collisionBlock.position.y && // BOTTOM of player vs TOP of block
