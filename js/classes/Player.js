@@ -1,8 +1,7 @@
-class Player {
+class Player extends Sprite {
     // what properties are associated with each player?
-    constructor({
-        collisionBlocks =[]
-    }) {
+    constructor({collisionBlocks =[], imageSrc}) {
+        super({imageSrc}) //call Sprite's constructor
         this.position = {
             x: 200,
             y: 200,
@@ -21,12 +20,6 @@ class Player {
         this.gravity = 1
 
         this.collisionBlocks = collisionBlocks
-    }
-
-    // what does the player look like?
-    draw() {
-        c.fillStyle = 'red'
-        c.fillRect(this.position.x, this.position.y, this.width, this.height)
     }
 
     // what properties within the player class should be altered over time?
