@@ -23,7 +23,7 @@ class Player extends Sprite {
 
     // what properties within the player class should be altered over time?
     update() {
-        c.fillStyle = 'blue'
+        c.fillStyle = 'rgba(0, 0, 255, 0.5)'
         c.fillRect(this.position.x, this.position.y, this.width, this.height)
         this.position.x += this.velocity.x
 
