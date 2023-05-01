@@ -1,7 +1,7 @@
 class Player extends Sprite {
     // what properties are associated with each player?
-    constructor({collisionBlocks =[], imageSrc, frameRate}) {
-        super({imageSrc, frameRate}) //call Sprite's constructor
+    constructor({collisionBlocks =[], imageSrc, frameRate, animations}) {
+        super({imageSrc, frameRate, animations}) //call Sprite's constructor
         this.position = {
             x: 200,
             y: 200,
