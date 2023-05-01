@@ -23,3 +23,9 @@ SPRITE ANIMATION:
 1. need to crop the sprite sheet to only use one image at a time
 2. move the crop mark to the next iteration of the sprite sheet
 3. adjust speed of crop mark movement to give illusion of movement
+
+PUTTING A DOOR ON THE MAP:
+1. go into Tiled > misc > select Door
+2. place door on the map
+3. take x and y coordinates on side panel (Map Properties)
+4. subtract the height of the door (also visible in map Properties) from the y-coordinate to get the actual y-coordinate
