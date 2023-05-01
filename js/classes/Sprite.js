@@ -4,7 +4,7 @@ class Sprite {
         this.image = new Image()
         this.image.onload = () => {
             this.loaded = true
-            this.width = this.image.width
+            this.width = this.image.width / 11 //framecount (# frames in sprite sheet); make dynamic later
             this.height = this.image.height
         }
         this.image.src = imageSrc
