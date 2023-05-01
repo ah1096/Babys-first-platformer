@@ -37,13 +37,13 @@ const player = new Player({
         },
         runRight: {
             frameRate: 8,
-            frameBuffer: 2,
+            frameBuffer: 4,
             loop: true,
             imageSrc: './img/king/runRight.png',
         },
         runLeft: {
             frameRate: 8,
-            frameBuffer: 2,
+            frameBuffer: 4,
             loop: true,
             imageSrc: './img/king/runLeft.png',
         }
@@ -71,8 +71,20 @@ function animate() {
     })
 
     player.velocity.x = 0
-    if (keys.d.pressed) player.velocity.x = 5 //change this value to change player speed
-    else if (keys.a.pressed) player.velocity.x = -5
+    if (keys.d.pressed) {
+        player.velocity.x = 5 //change this value to change player speed
+        player.switchSprite('runRight')
+        player.lastDirection = 'right'
+    } else if (keys.a.pressed) {
+        player.velocity.x = -5
+        player.switchSprite('runLeft')
+        player.lastDirection = 'left'
+    } else {
+        if (player.lastDirection === 'left'){
+            player.switchSprite('idleLeft')
+        } else {
+            player.switchSprite('idleRight')}
+    }
 
     player.draw()
     player.update()
