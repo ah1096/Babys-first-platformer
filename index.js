@@ -22,7 +22,33 @@ const player = new Player({
     collisionBlocks, //refers to const defined above; same name so basically this is the same as collisionBlocks = collisionBlocks
     imageSrc: './img/king/idle.png',
     frameRate: 11,
-})
+    animations: {
+        idleRight: {
+            frameRate: 11,
+            frameBuffer: 2,
+            loop: true,
+            imageSrc: './img/king/idle.png',
+        },
+        idleLeft: {
+            frameRate: 11,
+            frameBuffer: 2,
+            loop: true,
+            imageSrc: './img/king/idleLeft.png',
+        },
+        runRight: {
+            frameRate: 8,
+            frameBuffer: 4,
+            loop: true,
+            imageSrc: './img/king/runRight.png',
+        },
+        runLeft: {
+            frameRate: 8,
+            frameBuffer: 4,
+            loop: true,
+            imageSrc: './img/king/runLeft.png',
+        }
+    }
+}) 
 
 const keys = {
     w: {
@@ -45,8 +71,20 @@ function animate() {
     })
 
     player.velocity.x = 0
-    if (keys.d.pressed) player.velocity.x = 5 //change this value to change player speed
-    else if (keys.a.pressed) player.velocity.x = -5
+    if (keys.d.pressed) {
+        player.velocity.x = 5 //change this value to change player speed
+        player.switchSprite('runRight')
+        player.lastDirection = 'right'
+    } else if (keys.a.pressed) {
+        player.velocity.x = -5
+        player.switchSprite('runLeft')
+        player.lastDirection = 'left'
+    } else {
+        if (player.lastDirection === 'left'){
+            player.switchSprite('idleLeft')
+        } else {
+            player.switchSprite('idleRight')}
+    }
 
     player.draw()
     player.update()
