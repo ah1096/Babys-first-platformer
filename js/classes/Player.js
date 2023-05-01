@@ -34,11 +34,12 @@ class Player extends Sprite {
 
         this.hitbox = {
             position: {
-                x: this.position.x,
-                y: this.position.y,
+                x: this.position.x + 58, //adjust side position of hitbox
+                y: this.position.y + 34, //adjust vertical position of hitbox
             },
+            // adjust actual size of hitbox VV
             width: 50,
-            height: 50,
+            height: 53,
         }
 
         c.fillRect(
