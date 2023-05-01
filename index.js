@@ -54,6 +54,10 @@ const player = new Player({
             imageSrc: './img/king/enterDoor.png',
             onComplete: () => {
                 console.log('completed animation')
+                overlay.opacity
+                gsap.to(overlay, { //use gsap library to animat opacity from 0 to 1
+                    opacity: 1
+                })
             },
         }
     }
@@ -85,6 +89,10 @@ const keys = {
     },
 }
 
+const overlay = {
+    opacity: 0,
+}
+
 function animate() {
     window.requestAnimationFrame(animate) // create animation loop
 
@@ -100,6 +108,12 @@ function animate() {
     player.handleInput(keys)
     player.draw()
     player.update()
+
+    c.save() // combine with restore() @ bottom to apply the code inbetween
+    c.globalAlpha = overlay.opacity //determines transparency of black rectangle
+    c.fillStyle = 'black'
+    c.fillRect(0,0,canvas.width, canvas.height)
+    c.restore()
 }
 
 animate()
