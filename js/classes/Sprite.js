@@ -1,5 +1,5 @@
 class Sprite {
-    constructor({position, imageSrc, frameRate = 1, animations, frameBuffer = 2, loop}) { //set frameRate default to 1 so that at least one frame always loads
+    constructor({position, imageSrc, frameRate = 1, animations, frameBuffer = 2, loop = true}) { //set frameRate default to 1 so that at least one frame always loads
         this.position = position
         this.image = new Image()
         this.image.onload = () => {
