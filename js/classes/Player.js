@@ -29,18 +29,12 @@ class Player extends Sprite {
         
         this.position.x += this.velocity.x
 
+        this.updateHitbox()
+
         this.checkForHorizontalCollisions()
         this.applyGravity()
 
-        this.hitbox = {
-            position: {
-                x: this.position.x + 58, //adjust side position of hitbox
-                y: this.position.y + 34, //adjust vertical position of hitbox
-            },
-            // adjust actual size of hitbox
-            width: 50,
-            height: 53,
-        }
+        this.updateHitbox()
 
         c.fillRect(
             this.hitbox.position.x, 
@@ -52,15 +46,27 @@ class Player extends Sprite {
         this.checkForVerticalCollisions()
     }
 
+    updateHitbox() {
+        this.hitbox = {
+            position: {
+                x: this.position.x + 58, //adjust side position of hitbox
+                y: this.position.y + 34, //adjust vertical position of hitbox
+            },
+            // adjust actual size of hitbox
+            width: 50,
+            height: 53,
+        }
+    }
+
     checkForHorizontalCollisions() {
         for (let i = 0; i < this.collisionBlocks.length; i++) {
             const collisionBlock = this.collisionBlocks[i] //check for collision between this one block and player's position
     
             //check for collisions on all sides of Player
-            if (this.position.x <= collisionBlock.position.x + collisionBlock.width && // LEFT of player vs RIGHT of block
-                this.position.x + this.width >= collisionBlock.position.x && // RIGHT of player vs LEFT of block
-                this.position.y + this.height >= collisionBlock.position.y && // BOTTOM of player vs TOP of block
-                this.position.y <= collisionBlock.position.y + collisionBlock.height // TOP of player vs BOTTOM of block
+            if (this.hitbox.position.x <= collisionBlock.position.x + collisionBlock.width && // LEFT of player vs RIGHT of block
+                this.hitbox.position.x + this.hitbox.width >= collisionBlock.position.x && // RIGHT of player vs LEFT of block
+                this.hitbox.position.y + this.hitbox.height >= collisionBlock.position.y && // BOTTOM of player vs TOP of block
+                this.hitbox.position.y <= collisionBlock.position.y + collisionBlock.height // TOP of player vs BOTTOM of block
             ) {
                 //collision on x axis going to the left
                 if (this.velocity.x < 0){
