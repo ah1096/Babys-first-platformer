@@ -31,6 +31,23 @@ class Player extends Sprite {
 
         this.checkForHorizontalCollisions()
         this.applyGravity()
+
+        this.hitbox = {
+            position: {
+                x: this.position.x,
+                y: this.position.y,
+            },
+            width: 50,
+            height: 50,
+        }
+
+        c.fillRect(
+            this.hitbox.position.x, 
+            this.hitbox.position.y, 
+            this.hitbox.width, 
+            this.hitbox.height
+            )
+
         this.checkForVerticalCollisions()
     }
 
