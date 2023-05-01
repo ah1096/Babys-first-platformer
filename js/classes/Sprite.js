@@ -11,6 +11,8 @@ class Sprite {
         this.loaded = false
         this.frameRate = frameRate
         this.currentFrame = 0
+        this.elapsedFrames = 0
+        this.frameBuffer = 2
     }
     draw() {
         if (!this.loaded) return
@@ -38,12 +40,14 @@ class Sprite {
     }
 
     updateFrames() {
-        this.currentFrame++
+        this.elapsedFrames++
 
-        if (this.currentFrame < this.frameRate -1) {
-            this.currentFrame++
-        } else {
-            this.currentFrame = 0
+        if (this.elapsedFrames % this.frameBuffer === 0) {
+            if (this.currentFrame < this.frameRate -1) {
+                this.currentFrame++
+            } else {
+                this.currentFrame = 0
+            }
         }
     }
 }
