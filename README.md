@@ -18,3 +18,8 @@ COLLISION DETECTION:
 2. apply gravity
 3. check for vertical collisions
 4. update and loop
+
+SPRITE ANIMATION:
+1. need to crop the sprite sheet to only use one image at a time
+2. move the crop mark to the next iteration of the sprite sheet
+3. adjust speed of crop mark movement to give illusion of movement

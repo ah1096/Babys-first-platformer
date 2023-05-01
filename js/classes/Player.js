@@ -1,8 +1,7 @@
-class Player {
+class Player extends Sprite {
     // what properties are associated with each player?
-    constructor({
-        collisionBlocks =[]
-    }) {
+    constructor({collisionBlocks =[], imageSrc, frameRate}) {
+        super({imageSrc, frameRate}) //call Sprite's constructor
         this.position = {
             x: 200,
             y: 200,
@@ -13,8 +12,7 @@ class Player {
             y: 0,
         }
 
-        this.width = 25
-        this.height = 25
+
         this.sides = {
             bottom: this.position.y + this.height,
         }
@@ -23,14 +21,12 @@ class Player {
         this.collisionBlocks = collisionBlocks
     }
 
-    // what does the player look like?
-    draw() {
-        c.fillStyle = 'red'
-        c.fillRect(this.position.x, this.position.y, this.width, this.height)
-    }
-
     // what properties within the player class should be altered over time?
     update() {
+        // this vv is the blue box
+        // c.fillStyle = 'rgba(0, 0, 255, 0.5)'
+        // c.fillRect(this.position.x, this.position.y, this.width, this.height)
+        
         this.position.x += this.velocity.x
 
         this.checkForHorizontalCollisions()
