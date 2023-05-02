@@ -6,7 +6,7 @@ class CollisionBlock {
     }
 
     draw() {
-        c.fillStyle = 'rgba(255, 0, 0, 0.5)' //color + opacity of collisionblock
+        c.fillStyle = 'rgba(255, 0, 0, 0.5)' //color + opacity of collisionblock (uncomment collisionBlock draw() in animate() to see this)
         c.fillRect(this.position.x, this.position.y, this.width, this.height)
     }
 }

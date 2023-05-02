@@ -14,8 +14,8 @@ const player = new Player({
     frameRate: 11,
     animations: {
         idleRight: {
-            frameRate: 11,
-            frameBuffer: 2,
+            frameRate: 11, //number of frames in sprite png
+            frameBuffer: 2, //change this number to change sprite change speed
             loop: true,
             imageSrc: './img/king/idle.png',
         },
@@ -44,12 +44,15 @@ const player = new Player({
             imageSrc: './img/king/enterDoor.png',
             onComplete: () => {
                 console.log('completed animation')
-                gsap.to(overlay, { //use gsap library to animat opacity from 0 to 1
+                gsap.to(overlay, { //use gsap library to animate opacity from 0 to 1
                     opacity: 1,
                     onComplete: () => {
-                        level++
+                        level++ //go to next level
+
+                        //level 4 doesn't exist right now, so loop back to start
+                        //modify this code when game has an actual ending to roll credits or something
                         if (level === 4) {
-                            level = 1
+                            level = 1 
                         }
 
                         levels[level].init()
@@ -68,13 +71,13 @@ const player = new Player({
 let level = 1
 let levels = {
     1: {
-        init: () => { //call all code to populate level 1
+        init: () => { //call all code to populate level data
             parsedCollisions = collisionsLevel1.parse2D()
             collisionBlocks = parsedCollisions.createObjectsFrom2D()
             player.collisionBlocks = collisionBlocks
 
             if (player.currentAnimation) {
-                player.currentAnimation.isActive = false
+                player.currentAnimation.isActive = false //reset player animation on spawn
             }
 
             background= new Sprite({
@@ -87,7 +90,7 @@ let levels = {
 
             doors = [
                 new Sprite({
-                    position: { //where is the door placed?
+                    position: {
                         x: 767,
                         y: 270,
                     },
@@ -124,7 +127,7 @@ let levels = {
 
             doors = [
                 new Sprite({
-                    position: { //where is the door placed?
+                    position: {
                         x: 772,
                         y: 336,
                     },
@@ -161,7 +164,7 @@ let levels = {
 
             doors = [
                 new Sprite({
-                    position: { //where is the door placed?
+                    position: {
                         x: 176,
                         y: 335,
                     },
@@ -177,7 +180,9 @@ let levels = {
 }
 
 
-const keys = {
+const keys = { 
+    //add more keys here later for inventory, quest log, save/quit, etc.
+    //update eventListeners to correspond to changes made here
     w: {
         pressed: false,
     },
@@ -190,6 +195,7 @@ const keys = {
 }
 
 const overlay = {
+    //this is the default opacity of the fade-to-black between levels
     opacity: 0,
 }
 
@@ -197,7 +203,8 @@ function animate() {
     window.requestAnimationFrame(animate) // create animation loop
 
     background.draw()
-    //uncomment these vv to see collisionBlocks in red
+
+    //uncomment these lines to see collisionBlocks in red
     // collisionBlocks.forEach(collisionBlock => {
     //     collisionBlock.draw()
     // })
