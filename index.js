@@ -144,8 +144,8 @@ let levels = {
             doors = [
                 new Sprite({
                     position: { //where is the door placed?
-                        x: 175,
-                        y: 336,
+                        x: 176,
+                        y: 335,
                     },
                     imageSrc: './img/doorOpen.png',
                     frameRate: 5,
