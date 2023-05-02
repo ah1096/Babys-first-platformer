@@ -48,6 +48,10 @@ const player = new Player({
                     opacity: 1,
                     onComplete: () => {
                         level++
+                        if (level === 4) {
+                            level = 1
+                        }
+                        
                         levels[level].init()
                         player.switchSprite('idleRight') //switches sprite on next level after door open
                         player.preventInput = false //allows key input after spawning into next level
