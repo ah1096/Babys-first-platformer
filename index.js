@@ -51,7 +51,7 @@ const player = new Player({
                         if (level === 4) {
                             level = 1
                         }
-                        
+
                         levels[level].init()
                         player.switchSprite('idleRight') //switches sprite on next level after door open
                         player.preventInput = false //allows key input after spawning into next level
@@ -197,9 +197,10 @@ function animate() {
     window.requestAnimationFrame(animate) // create animation loop
 
     background.draw()
-    collisionBlocks.forEach(collisionBlock => {
-        collisionBlock.draw()
-    })
+    //uncomment these vv to see collisionBlocks in red
+    // collisionBlocks.forEach(collisionBlock => {
+    //     collisionBlock.draw()
+    // })
 
     doors.forEach(door => {
         door.draw()
