@@ -59,7 +59,7 @@ const player = new Player({
     },
 }) 
 
-let level = 2
+let level = 3
 let levels = {
     1: {
         init: () => { //call all code to populate level 1
@@ -112,6 +112,39 @@ let levels = {
                 new Sprite({
                     position: { //where is the door placed?
                         x: 772,
+                        y: 336,
+                    },
+                    imageSrc: './img/doorOpen.png',
+                    frameRate: 5,
+                    frameBuffer: 5,
+                    loop: false,
+                    autoplay: false,
+                })
+            ]
+        }
+    },
+    3: {
+        init: () => { 
+            parsedCollisions = collisionsLevel3.parse2D()
+            collisionBlocks = parsedCollisions.createObjectsFrom2D()
+            player.collisionBlocks = collisionBlocks
+
+            //change player spawn position in this level
+            player.position.x = 785
+            player.position.y = 220
+
+            background= new Sprite({
+                position: {
+                    x: 0,
+                    y: 0,
+                },
+                imageSrc: './img/backgroundLevel3.png'
+            })
+
+            doors = [
+                new Sprite({
+                    position: { //where is the door placed?
+                        x: 175,
                         y: 336,
                     },
                     imageSrc: './img/doorOpen.png',
