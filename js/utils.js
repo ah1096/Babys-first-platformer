@@ -1,4 +1,8 @@
-//vv this method is apparently controversial because you shouldn't alter default JS objects
+// add custom array methods & other utility functions here!!!
+
+//vv this method is apparently controversial because you shouldn't alter default JS objects 
+//(figure out the normie way later i guess)
+
 Array.prototype.parse2D = function() { //parse collision data from big array exported out of Tiled
     const rows = []
     for (let i = 0; i < this.length; i+=16) {
@@ -12,7 +16,7 @@ Array.prototype.createObjectsFrom2D = function () {
     const objects = []
     this.forEach((row, y )=> { //"this" references whatever array this method is being called on
         row.forEach((symbol, x) => {
-            if (symbol === 292) {
+            if (symbol === 292 || symbol === 250) {
                 objects.push(new CollisionBlock({
                     position: {
                         x: x * 64, //push block to the right @ appropriate amount
