@@ -92,7 +92,7 @@ let levels = {
     },
     2: {
         init: () => { //call all code to populate level 1
-            parsedCollisions = collisionsLevel1.parse2D()
+            parsedCollisions = collisionsLevel2.parse2D()
             collisionBlocks = parsedCollisions.createObjectsFrom2D()
             player.collisionBlocks = collisionBlocks
 
