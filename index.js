@@ -44,16 +44,22 @@ const player = new Player({
             imageSrc: './img/king/enterDoor.png',
             onComplete: () => {
                 console.log('completed animation')
-                overlay.opacity
                 gsap.to(overlay, { //use gsap library to animat opacity from 0 to 1
-                    opacity: 1
+                    opacity: 1,
+                    onComplete: () => {
+                        level++
+                        levels[level].init()
+                        gsap.to(overlay, {
+                            opacity: 0,
+                        })
+                    }
                 })
             },
-        }
-    }
+        },
+    },
 }) 
 
-let level = 1
+let level = 2
 let levels = {
     1: {
         init: () => { //call all code to populate level 1
@@ -74,6 +80,39 @@ let levels = {
                     position: { //where is the door placed?
                         x: 767,
                         y: 270,
+                    },
+                    imageSrc: './img/doorOpen.png',
+                    frameRate: 5,
+                    frameBuffer: 5,
+                    loop: false,
+                    autoplay: false,
+                })
+            ]
+        }
+    },
+    2: {
+        init: () => { //call all code to populate level 1
+            parsedCollisions = collisionsLevel1.parse2D()
+            collisionBlocks = parsedCollisions.createObjectsFrom2D()
+            player.collisionBlocks = collisionBlocks
+
+            //change player spawn position in this level
+            player.position.x = 96
+            player.position.y = 140
+
+            background= new Sprite({
+                position: {
+                    x: 0,
+                    y: 0,
+                },
+                imageSrc: './img/backgroundLevel2.png'
+            })
+
+            doors = [
+                new Sprite({
+                    position: { //where is the door placed?
+                        x: 772,
+                        y: 336,
                     },
                     imageSrc: './img/doorOpen.png',
                     frameRate: 5,
