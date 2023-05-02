@@ -49,6 +49,8 @@ const player = new Player({
                     onComplete: () => {
                         level++
                         levels[level].init()
+                        player.switchSprite('idleRight') //switches sprite on next level after door open
+                        player.preventInput = false //allows key input after spawning into next level
                         gsap.to(overlay, {
                             opacity: 0,
                         })
@@ -59,13 +61,17 @@ const player = new Player({
     },
 }) 
 
-let level = 3
+let level = 1
 let levels = {
     1: {
         init: () => { //call all code to populate level 1
             parsedCollisions = collisionsLevel1.parse2D()
             collisionBlocks = parsedCollisions.createObjectsFrom2D()
             player.collisionBlocks = collisionBlocks
+
+            if (player.currentAnimation) {
+                player.currentAnimation.isActive = false
+            }
 
             background= new Sprite({
                 position: {
@@ -91,10 +97,14 @@ let levels = {
         }
     },
     2: {
-        init: () => { //call all code to populate level 1
+        init: () => { 
             parsedCollisions = collisionsLevel2.parse2D()
             collisionBlocks = parsedCollisions.createObjectsFrom2D()
             player.collisionBlocks = collisionBlocks
+
+            if (player.currentAnimation) {
+                player.currentAnimation.isActive = false
+            }
 
             //change player spawn position in this level
             player.position.x = 96
@@ -128,6 +138,10 @@ let levels = {
             parsedCollisions = collisionsLevel3.parse2D()
             collisionBlocks = parsedCollisions.createObjectsFrom2D()
             player.collisionBlocks = collisionBlocks
+
+            if (player.currentAnimation) {
+                player.currentAnimation.isActive = false
+            }
 
             //change player spawn position in this level
             player.position.x = 785
