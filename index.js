@@ -217,6 +217,10 @@ function animate() {
     player.draw()
     player.update()
 
+    // itemKey.handleInput(keys)
+    // itemKey.draw()
+    // itemKey.update()
+
     c.save() // combine with restore() @ bottom to apply the code inbetween
     c.globalAlpha = overlay.opacity //determines transparency of black rectangle
     c.fillStyle = 'black'
