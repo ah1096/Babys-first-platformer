@@ -14,27 +14,40 @@ CURRENT VERSION: Baby's First Platformer (BFP) v.0 May 2, 2023
                                 (things that are definitely happening)
 
 ==> PICK UP A KEY UPDATE (BFP v.0.1)
-    Doors are locked by default upon Player spawn and can be unlocked.
-    Player can pick up a "key" item, add it to their inventory, and unlock a door to progress to the next level.
+    A "key" item exists in the level, and the Player can pick it up.
 
     *ITEMS* 
-    <!-- TODO: Items exist in the level -->
-    <!-- TODO: Player can interact with items on key press -->
-    <!-- TODO: Items disappear from the level when they are interacted with -->
+    <!-- TODO: an item exists in the level -->
+    <!-- TODO: Player can interact with item on key press -->
+    <!-- TODO: Item disappears from the level when it is interacted with -->
+
+
+==> UNLOCK THE DOOR UPDATE
+    Doors are locked by default upon Player spawn and the Player cannot enter them. If the Player has a key, the door can be unlocked and the Player can enter the door.
+
+    *DOORS*
+    <!-- TODO: Doors can be locked by default on level entrance -->
+    <!-- TODO: Doors can be unlocked if Player has a key -->
+
+
+==> INVENTORY UPDATE
+    the Player has an inventory that can store an item
+
+    *ITEMS*
     <!-- TODO: Interactible items show text ("Pick up {item}") at bottom of screen when they collide with player -->
 
     *INVENTORY*
     <!-- TODO: Inventory appears on screen -->
     <!-- TODO: Inventory can be opened and closed on key press -->
     <!-- TODO: Inventory can be updated; Player can add ("pick up") and remove ("drop") one item-->
+
+
+==> InVENTORY UPDATE 2
+    the Player has an inventory that can store multiple items
     <!-- TODO: Inventory can be updated; Player can add ("pick up") and remove ("drop") multiple items-->
 
-    *DOORS*
-    <!-- TODO: Doors can be locked by default on level entrance -->
-    <!-- TODO: Doors can be unlocked if Player has a key in their inventory -->
 
-
-==> TALK TO ME UPDATE (BFP v.0.2)
+==> TALK TO ME UPDATE
     NPCs exist in the world. The Player can interact with them to trigger dialog.
 
     *NPCs*
@@ -58,6 +71,7 @@ CURRENT VERSION: Baby's First Platformer (BFP) v.0 May 2, 2023
     <!-- TODO: add a title screen before level 1 loads -->
     <!-- TODO: add a credits scene on level 3 door exit? -->
     <!-- TODO: add custom Keycat sprite for Player -->
+        <!-- TODO: Keycat sprite has a little key in its mouth when hasKey = true -->
     <!-- TODO: add custom NPC sprites -->
     <!-- TODO: add custom item sprites -->
     <!-- TODO: add custom level designs -->

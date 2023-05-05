@@ -1,0 +1,66 @@
+***this is a stream of conciousness word dump to figure out my thought process
+
+MONKEYBRAIN IT FIRST, THEN LOOK UP A TUTORIAL IF YOU GET STUCK
+
+Specific item: key
+
+Properties:
+- position: where is the key on the level?
+- sprite: what does the key look like?
+- pickedUp: has the player picked it up?
+
+How can I add an item to the Player's inventory?
+***DON'T WORRY ABOUT COMPLICATED INVENTORY YET, ALL WE NEED IS A key
+- add the key item to the Player? create a property on the Player that is something like "hasKey"
+- hasKey is false by default, becomes true when player interacts with key
+
+If I add the "hasKey" property to the Player, then I don't need a pickedUp property on the key
+
+1. make a class for items
+    -Properties: position (where is key), sprite (what is key)
+2. edit Player class to have "hasKey" property
+3. update item class with new method: pickUpKey function (make key invisible on pickup, set hasKey on player to True)
+4. update eventListeners so that the 'e' key becomes the item interaction button
+    - if the Player's hitbox is intersecting the item on any side, pressing e = pickup item
+    - e key calls the items' pickUpKey function which removes it from the level and makes hasKey = true
+    - how do I remove the key from the level? will setting the sprite to '' just make it an invisible
+        key that can still be interacted with? will removing the key entirely via some kind of delete function
+        cause the hasKey property to revert to false since the key no longer exists?
+5. 
+
+SIDE NOTE: it would be cute to add a sprite in the Keycat Update phase of Keycat holding the key in its mouth
+    if hasKey = true
+
+Do I really need an inventory at this stage? Going to remove that from this update TODO in the README
+
+Do I even need to make a whole new class for the key? I can just treat each key like a door,
+    since every level has one key and one door.
+
+I've tried the door approach but now I'm logging "itemKeys.draw()" is not a function in the console.
+Going to look through the door branch of the project and remember what I did.
+
+Was the draw method in the sprite class?
+Yes. Why is it saying that itemKeys.draw is not a fucntion?
+
+omfg it was just a typo; I had written 
+
+    itemKeys.forEach(itemKey => {
+        itemKeys.draw()
+    })
+
+instead of 
+
+    itemKeys.forEach(itemKey => {
+        itemKey.draw()
+    })
+
+placeholder box now appears on the level; making progress
+
+How do I give that box ("itmKey") the properties I need so that the player can interact with it?
+Again, refer to door method.
+
+I tried adding the e key event listener and it doesn't work; come back to this later
+...
+
+Giving up on the door method and making a Key class instead.
+Scrapping this item branch and making a new one called key-class.
