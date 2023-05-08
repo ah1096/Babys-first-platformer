@@ -29,6 +29,7 @@ window.addEventListener('keydown', (event) => {
                     &&  
                     !player.hasKey
                 ) {
+                    player.velocity.y = -1
                     console.log("enterDoor hasKey check 2:", player.hasKey)
                     console.log("you need the key to proceed")
                     player.switchSprite('idleRight')

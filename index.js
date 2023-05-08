@@ -43,7 +43,7 @@ const player = new Player({
             loop: false,
             imageSrc: './img/king/enterDoor.png',
             onComplete: () => {
-                    console.log("enterDoor hasKey check 1:", player.hasKey)
+                    // console.log("enterDoor hasKey check 1:", player.hasKey)
                     console.log('completed animation')
                     gsap.to(overlay, { //use gsap library to animate opacity from 0 to 1
                         opacity: 1,
