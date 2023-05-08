@@ -16,8 +16,7 @@ class Key extends Sprite {
             y: 200,
         }
 
-        this.visible = true
-        this.pickedup = false
+        this.pickedUp = false
 
         this.hitbox = this.updateItemHitbox()
 
@@ -75,14 +74,17 @@ class Key extends Sprite {
         }
     }
 
-    handleInput(keys) {
-        
+    pickUpItem(keys) {
         if (this.checkForCollisionWithPlayer() === true && keys.e.pressed === true) {
             console.log("you picked up a key!")
+
+            this.player.hasKey = true
+            this.pickedUp = true
         } else {
             return
         }
     }
+
 
 
 

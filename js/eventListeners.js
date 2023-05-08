@@ -47,3 +47,11 @@ window.addEventListener('keyup', (event) => {
 
     }
 })
+
+window.addEventListener('keyup', (event) => {
+    switch (event.key){
+        case 'e': 
+            keys.e.pressed = false
+            break
+    }
+})

@@ -21,6 +21,8 @@ class Player extends Sprite {
         this.collisionBlocks = collisionBlocks
 
         this.hitbox = this.updateHitbox()
+
+        this.hasKey = false
     }
 
     // what properties within the player class should be altered over time?
