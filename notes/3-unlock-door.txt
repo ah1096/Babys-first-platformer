@@ -1,0 +1,5 @@
+TODO: Doors can be locked by default on level entrance
+TODO: Doors can be unlocked if Player has a key
+
+- set door property as locked by default
+- somehow make it so door detects haskey property on Player
