@@ -1,12 +1,12 @@
 class Key extends Sprite {
     // what properties are associated with each key?
-    constructor({collisionBlocks =[], imageSrc, frameRate, animations, loop}) {
+    constructor({imageSrc, frameRate, animations, loop}) {
         super({imageSrc, frameRate, animations, loop}) //call Sprite's constructor
 
         this.imageSrc = './img/box.png'
-        this.position = position;
-        this.width = width;
-        this.height = height;
+
+        this.width = 50,
+        this.height = 50,
 
         this.position = {
             x: 200,
@@ -35,12 +35,15 @@ class Key extends Sprite {
 
     checkIfPickedUp(keys) {
         if (keys.e.pressed) {
+            return true
+            console.log('the key has been pickedup')
             //key becomes invisible
             //pickedup becomes true
             //Player's "hasKey" property updated to true
             //disable input of e key; player can't pick up invisible key by mistake
         } else {
-
+            return false
+            console.log("the key is on the floor")
         }
     }
 

@@ -68,6 +68,11 @@ const player = new Player({
     },
 }) 
 
+const itemKey = new Key({
+    imageSrc: './img/box.png',
+    frameRate: 1,
+})
+
 let level = 1
 let levels = {
     1: {
@@ -75,6 +80,9 @@ let levels = {
             parsedCollisions = collisionsLevel1.parse2D()
             collisionBlocks = parsedCollisions.createObjectsFrom2D()
             player.collisionBlocks = collisionBlocks
+
+            itemKey.position.x = 400
+            itemKey.position.y = 353
 
             if (player.currentAnimation) {
                 player.currentAnimation.isActive = false //reset player animation on spawn
@@ -218,7 +226,7 @@ function animate() {
     player.update()
 
     // itemKey.handleInput(keys)
-    // itemKey.draw()
+    itemKey.draw() //this puts the key on the level
     // itemKey.update()
 
     c.save() // combine with restore() @ bottom to apply the code inbetween
