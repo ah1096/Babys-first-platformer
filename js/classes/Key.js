@@ -76,12 +76,18 @@ class Key extends Sprite {
 
     pickUpItem(keys) {
         if (this.checkForCollisionWithPlayer() === true && keys.e.pressed === true) {
-            console.log("you picked up a key!")
-
             this.player.hasKey = true
+            console.log("does player have key?", player.hasKey)
             this.pickedUp = true
+            console.log("has the key been picked up?", this.pickedUp)
         } else {
             return
+        }
+    }
+
+    removeFromLevel() {
+        if (this.pickedUp === true){
+            this.imageSrc = ''
         }
     }
 

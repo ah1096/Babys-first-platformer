@@ -251,7 +251,8 @@ function animate() {
     player.draw()
     player.update()
 
-    console.log(player.hasKey) //check if Key.js's handleInput is working
+    //check if Key.js's handleInput is working
+    console.log("does player have key?", player.hasKey)
 
     itemKey.pickUpItem(keys)
     itemKey.draw() //this puts the key on the level

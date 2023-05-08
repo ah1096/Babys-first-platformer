@@ -1,4 +1,5 @@
-TODO: Player can interact with item on key press
+DONE Player can interact with item on key press
+TODO: Item disappears from the level when it is interacted with
 
 - I want the player to be able to trigger an interaction with the key item upon pressing the e key
 - for now, just triggering a "you picked up a key" console log is fine
@@ -18,3 +19,10 @@ handleInput(keys) {
             return
         }
     }
+
+figure out how to make key disappear from level
+- create a removeFromLevel function? if key = pickedUp, then remove from level?
+- remove sprite? make invisible?
+- i could move the key out of reach of the player?
+
+going to try the out-of-reach approach
