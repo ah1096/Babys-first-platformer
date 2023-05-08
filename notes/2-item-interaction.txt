@@ -26,3 +26,10 @@ figure out how to make key disappear from level
 - i could move the key out of reach of the player?
 
 going to try the out-of-reach approach
+
+it works!!! created the removeFromLevel() method in Key.js; right now the key item just
+    flies to the upper left corner of the screen. change this later so that paricular space
+    become a fake "inventory" the just shows whether you have the key or not. like this:
+         __________
+        | key: xx  | (pretend this is good ASCII art)
+         __________

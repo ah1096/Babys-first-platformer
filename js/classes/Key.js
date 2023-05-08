@@ -39,6 +39,7 @@ class Key extends Sprite {
     
         this.updateItemHitbox();
         this.checkForCollisionWithPlayer();
+        this.removeFromLevel();
     }
 
     updateItemHitbox() {
@@ -87,7 +88,8 @@ class Key extends Sprite {
 
     removeFromLevel() {
         if (this.pickedUp === true){
-            this.imageSrc = ''
+            this.position.x = 0
+            this.position.y = 0
         }
     }
 
