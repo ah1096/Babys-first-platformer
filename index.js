@@ -76,7 +76,7 @@ const itemKey = new Key({
     player: player
 })
 
-let level = 3
+let level = 1
 let levels = {
     1: {
         init: () => { //call all code to populate level data
@@ -86,6 +86,10 @@ let levels = {
 
             itemKey.position.x = 400
             itemKey.position.y = 353
+
+            //reset key
+            player.hasKey = false
+            itemKey.pickedUp = false
 
             if (player.currentAnimation) {
                 player.currentAnimation.isActive = false //reset player animation on spawn
@@ -132,6 +136,10 @@ let levels = {
             itemKey.position.x = 130
             itemKey.position.y = 480
 
+            //reset key
+            player.hasKey = false
+            itemKey.pickedUp = false
+
             background= new Sprite({
                 position: {
                     x: 0,
@@ -173,6 +181,10 @@ let levels = {
             itemKey.position.x = 790
             itemKey.position.y = 353
 
+            //reset key
+            player.hasKey = false
+            itemKey.pickedUp = false
+
             background= new Sprite({
                 position: {
                     x: 0,
@@ -211,6 +223,9 @@ const keys = {
     d: {
         pressed: false,
     },
+    e: {
+        pressed: false,
+    },
 }
 
 const overlay = {
@@ -236,7 +251,10 @@ function animate() {
     player.draw()
     player.update()
 
-    // itemKey.handleInput(keys)
+    //check if Key.js's handleInput is working
+    console.log("does player have key?", player.hasKey)
+
+    itemKey.pickUpItem(keys)
     itemKey.draw() //this puts the key on the level
     itemKey.update(player)
 

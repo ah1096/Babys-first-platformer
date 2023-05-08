@@ -16,8 +16,7 @@ class Key extends Sprite {
             y: 200,
         }
 
-        this.visible = true
-        this.pickedup = false
+        this.pickedUp = false
 
         this.hitbox = this.updateItemHitbox()
 
@@ -40,6 +39,7 @@ class Key extends Sprite {
     
         this.updateItemHitbox();
         this.checkForCollisionWithPlayer();
+        this.removeFromLevel();
     }
 
     updateItemHitbox() {
@@ -65,7 +65,6 @@ class Key extends Sprite {
             const xCollision = itemhitbox.position.x < playerhitbox.position.x + playerhitbox.width && itemhitbox.position.x + itemhitbox.width > playerhitbox.position.x
             const yCollision = itemhitbox.position.y < playerhitbox.position.y + playerhitbox.height && itemhitbox.position.y + itemhitbox.height > playerhitbox.position.y
             if (xCollision && yCollision) {
-                console.log('colliding')
                 return true
             } else {
                 return false
@@ -74,8 +73,26 @@ class Key extends Sprite {
             console.log('player hitbox is undefined')
             return false
         }
-
     }
+
+    pickUpItem(keys) {
+        if (this.checkForCollisionWithPlayer() === true && keys.e.pressed === true) {
+            this.player.hasKey = true
+            console.log("does player have key?", player.hasKey)
+            this.pickedUp = true
+            console.log("has the key been picked up?", this.pickedUp)
+        } else {
+            return
+        }
+    }
+
+    removeFromLevel() {
+        if (this.pickedUp === true){
+            this.position.x = 0
+            this.position.y = 0
+        }
+    }
+
 
 
 
