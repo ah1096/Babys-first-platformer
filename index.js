@@ -43,8 +43,6 @@ const player = new Player({
             loop: false,
             imageSrc: './img/king/enterDoor.png',
             onComplete: () => {
-
-                if (player.hasKey) {
                     console.log("enterDoor hasKey check 1:", player.hasKey)
                     console.log('completed animation')
                     gsap.to(overlay, { //use gsap library to animate opacity from 0 to 1
@@ -67,12 +65,6 @@ const player = new Player({
                             })
                         }
                     })
-                } else {
-                    console.log("enterDoor hasKey check 2:", player.hasKey)
-                    console.log("you need the key to proceed")
-                    player.switchSprite('idleRight')
-                    player.preventInput = false
-                }
             },
         },
     },

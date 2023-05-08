@@ -11,6 +11,8 @@ window.addEventListener('keydown', (event) => {
 
                 player.hitbox.position.y + player.hitbox.height >= door.position.y && 
                 player.hitbox.position.y <= door.position.y + door.height
+                &&
+                player.hasKey
                 ) {
                     player.velocity.x = 0
                     player.velocity.y = 0
@@ -18,7 +20,20 @@ window.addEventListener('keydown', (event) => {
                     player.switchSprite('enterDoor')
                     door.play() //begins door's animation loop; it opens
                     return 
-                }
+                } else if (
+                    player.hitbox.position.x + player.hitbox.width <= door.position.x + door.width && //RIGHT of player <= RIGHT side of door
+                    player.hitbox.position.x  >= door.position.x && //LEFT of player >= LEFT of door
+
+                    player.hitbox.position.y + player.hitbox.height >= door.position.y && 
+                    player.hitbox.position.y <= door.position.y + door.height
+                    &&  
+                    !player.hasKey
+                ) {
+                    console.log("enterDoor hasKey check 2:", player.hasKey)
+                    console.log("you need the key to proceed")
+                    player.switchSprite('idleRight')
+                    player.preventInput = false
+                } 
             }
             if (player.velocity.y === 0)
             player.velocity.y = -25 //adjust jump height here

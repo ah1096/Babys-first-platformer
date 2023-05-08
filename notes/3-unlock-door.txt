@@ -5,5 +5,8 @@ TODO: Doors can be unlocked if Player has a key
 - somehow make it so door detects haskey property on Player
 
 jk all i needed to do was change the openDoor animation
-now I need to figure otu how to make the animation NOT trigger when I attempt to
+now I need to figure out how to make the animation NOT trigger when I attempt to
     enter the door without a key
+
+looking at eventListener.js, I think I could have just changed them up 
+attempting changing the door animation there
