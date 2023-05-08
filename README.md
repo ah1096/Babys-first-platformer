@@ -19,7 +19,7 @@ CURRENT VERSION: Baby's First Platformer (BFP) v.0 May 2, 2023
     *ITEMS* 
     DONE: an item exists in the level
     DONE Player can interact with item on key press
-    <!-- TODO: Item disappears from the level when it is interacted with -->
+    DONE: Item disappears from the level when it is interacted with
 
 
 ==> UNLOCK THE DOOR UPDATE
@@ -29,6 +29,51 @@ CURRENT VERSION: Baby's First Platformer (BFP) v.0 May 2, 2023
     <!-- TODO: Doors can be locked by default on level entrance -->
     <!-- TODO: Doors can be unlocked if Player has a key -->
 
+
+==> KEYCAT UPDATE 1 (Keycat v1.0)
+    The game is now officially Keycat v.1! Fun part: styling.
+
+    *APPEARANCE*
+    <!-- TODO: add custom Keycat sprite for Player -->
+    <!-- TODO: add custom key sprite -->
+    <!-- TODO: center game canvas in middle of viewport; make it looks nicer -->
+    
+    
+==> KEYCAT: LEVEL UP UPDATE (Keycat v1.1)
+    Change the level backgrounds and create more levels
+
+    *APPEARANCE*
+    <!-- TODO: add custom art for levels 1-3 -->
+
+    *LEVELS*
+    <!-- TODO: create level 4 -->
+    <!-- TODO: create level 5 -->
+    <!-- TODO: create level 6 -->
+    <!-- TODO: create level 7 -->
+    <!-- TODO: create level 8 -->
+    <!-- TODO: create level 9 -->
+    <!-- TODO: create level 10 -->
+
+
+==> KEYCAT: FINISHING TOUCHES UPDATE (Keycat v1.2)
+    Make the game look more polished; smooth out any weird bits and make it pretty
+
+    *APPEARANCE*
+    <!-- TODO: add a title screen before level 1 loads -->
+    <!-- TODO: add a credits scene on level 3 door exit? -->
+    <!-- TODO: Keycat sprite has a little key in its mouth when hasKey = true -->
+
+    *MUSIC*
+    <!-- TODO: add custom music -->
+
+    *TESTING*
+    <!-- TODO: have 3 people play the game + suggest changes -->
+    <!-- TODO: evaluate + implement suggested changes -->
+
+
+
+=====STRETCH GOALS============================================
+                    (things that would be cool to have, but aren't a priority)
 
 ==> INVENTORY UPDATE
     the Player has an inventory that can store an item
@@ -62,27 +107,6 @@ CURRENT VERSION: Baby's First Platformer (BFP) v.0 May 2, 2023
     <!-- TODO: NPCs can have multiple dialog boxes -->
     <!-- TODO: Player can advance to next dialog box on key press -->
 
-
-==> KEYCAT UPDATE 1
-    The game is now officially Keycat v.1
-
-    *APPEARANCE*
-    <!-- TODO: center game canvas in middle of viewport; make it looks nicer -->
-    <!-- TODO: add a title screen before level 1 loads -->
-    <!-- TODO: add a credits scene on level 3 door exit? -->
-    <!-- TODO: add custom Keycat sprite for Player -->
-        <!-- TODO: Keycat sprite has a little key in its mouth when hasKey = true -->
-    <!-- TODO: add custom NPC sprites -->
-    <!-- TODO: add custom item sprites -->
-    <!-- TODO: add custom level designs -->
-
-    *MUSIC*
-    <!-- TODO: add custom music -->
-
-    *TESTING*
-
-=====STRETCH GOALS============================================
-                    (things that would be cool to have, but aren't a priority)
 
 ==> THREE'S A CROWD UPDATE
     Multiple NPCs can exist per level.
