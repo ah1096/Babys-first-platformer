@@ -6,3 +6,15 @@ TODO: Player can interact with item on key press
 currently the key logs "colliding" when the player collides with it; 
 I want to go where that chunk of code is and change it so that it says "press e" and if the player
 presses e, it logs "you picked up a key"
+
+
+added the code below so that if player is colliding AND pressing e, the text displays:
+
+handleInput(keys) {
+        
+        if (this.checkForCollisionWithPlayer() === true && keys.e.pressed === true) {
+            console.log("you picked up a key!")
+        } else {
+            return
+        }
+    }

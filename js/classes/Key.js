@@ -65,7 +65,6 @@ class Key extends Sprite {
             const xCollision = itemhitbox.position.x < playerhitbox.position.x + playerhitbox.width && itemhitbox.position.x + itemhitbox.width > playerhitbox.position.x
             const yCollision = itemhitbox.position.y < playerhitbox.position.y + playerhitbox.height && itemhitbox.position.y + itemhitbox.height > playerhitbox.position.y
             if (xCollision && yCollision) {
-                console.log('colliding')
                 return true
             } else {
                 return false
@@ -78,7 +77,7 @@ class Key extends Sprite {
 
     handleInput(keys) {
         
-        if (keys.e.pressed) {
+        if (this.checkForCollisionWithPlayer() === true && keys.e.pressed === true) {
             console.log("you picked up a key!")
         } else {
             return
