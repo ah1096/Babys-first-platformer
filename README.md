@@ -31,8 +31,8 @@ CURRENT VERSION: Baby's First Platformer (BFP) v.0.1 May 8, 2023
     Doors are locked by default upon Player spawn and the Player cannot enter them. If the Player has a key, the door can be unlocked and the Player can enter the door.
 
     *DOORS*
-    <!-- TODO: Doors can be locked by default on level entrance -->
-    <!-- TODO: Doors can be unlocked if Player has a key -->
+    DONE: Doors can be locked by default on level entrance 
+    DONE: Doors can be unlocked if Player has a key 
 
 
 ==> KEYCAT UPDATE 1 (Keycat v1.0)
