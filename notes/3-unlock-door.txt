@@ -3,3 +3,7 @@ TODO: Doors can be unlocked if Player has a key
 
 - set door property as locked by default
 - somehow make it so door detects haskey property on Player
+
+jk all i needed to do was change the openDoor animation
+now I need to figure otu how to make the animation NOT trigger when I attempt to
+    enter the door without a key
