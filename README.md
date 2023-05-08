@@ -17,7 +17,7 @@ CURRENT VERSION: Baby's First Platformer (BFP) v.0 May 2, 2023
     A "key" item exists in the level, and the Player can pick it up.
 
     *ITEMS* 
-    <!-- TODO: an item exists in the level -->
+    DONE: an item exists in the level
     <!-- TODO: Player can interact with item on key press -->
     <!-- TODO: Item disappears from the level when it is interacted with -->
 

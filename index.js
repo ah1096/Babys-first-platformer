@@ -76,7 +76,7 @@ const itemKey = new Key({
     player: player
 })
 
-let level = 2
+let level = 3
 let levels = {
     1: {
         init: () => { //call all code to populate level data
@@ -170,7 +170,7 @@ let levels = {
             player.position.y = 220
 
             //change key spawn position in this level
-            itemKey.position.x = 400
+            itemKey.position.x = 790
             itemKey.position.y = 353
 
             background= new Sprite({
