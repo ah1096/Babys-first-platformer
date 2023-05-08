@@ -10,3 +10,7 @@ now I need to figure out how to make the animation NOT trigger when I attempt to
 
 looking at eventListener.js, I think I could have just changed them up 
 attempting changing the door animation there
+
+that worked but now the Player jumps in front of the door; 
+going to try and change it so that getting the "you need the key" message also results in 
+not jumping
