@@ -1,0 +1,19 @@
+TODO: Doors can be locked by default on level entrance
+TODO: Doors can be unlocked if Player has a key
+
+- set door property as locked by default
+- somehow make it so door detects haskey property on Player
+
+jk all i needed to do was change the openDoor animation
+now I need to figure out how to make the animation NOT trigger when I attempt to
+    enter the door without a key
+
+looking at eventListener.js, I think I could have just changed them up 
+attempting changing the door animation there
+
+that worked but now the Player jumps in front of the door; 
+going to try and change it so that getting the "you need the key" message also results in 
+not jumping
+
+changed player's velocity.y to -1 so technically they're still "jumping," but it's small enough
+that it looks as thought they're not moving at all when checking the door with hasKey=false
