@@ -69,7 +69,7 @@ const player = new Player({
 }) 
 
 const itemKey = new Key({
-    imageSrc: './img/box.png',
+    imageSrc: './img/box.png', //change to actual key later
     frameRate: 1,
     // animations: {default: [0]},
     // loop: true,
