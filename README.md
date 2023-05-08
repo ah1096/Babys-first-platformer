@@ -2,16 +2,18 @@
 My first ever attempt at making a platformer. 
 
 
-CURRENT VERSION: Baby's First Platformer (BFP) v.0 May 2, 2023
+CURRENT VERSION: Baby's First Platformer (BFP) v.0.1 May 8, 2023
 - Game uses assets from ChrisCourses video tutorial (linked in Resources)
 - Player can move using WAD keys: w = jump, a = left, d = right
 - Player can enter doors using the W key
 - Player can change levels by entering doors
 - Levels 1 through 3 exist
 - Upon entering level 3's door, Player is looped back to Level 1
+- Player can pick up a "key" item (currently a placeholder box image)
+- Key item moves out of playable area upon being picked up
 
-=====UPCOMING CHANGES============================================
-                                (things that are definitely happening)
+
+=====CHANGELOG==================================================
 
 ==> PICK UP A KEY UPDATE (BFP v.0.1)
     A "key" item exists in the level, and the Player can pick it up.
@@ -20,6 +22,9 @@ CURRENT VERSION: Baby's First Platformer (BFP) v.0 May 2, 2023
     DONE: an item exists in the level
     DONE Player can interact with item on key press
     DONE: Item disappears from the level when it is interacted with
+
+=====UPCOMING CHANGES============================================
+                                (things that are definitely happening)
 
 
 ==> UNLOCK THE DOOR UPDATE
