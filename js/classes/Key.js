@@ -1,5 +1,5 @@
 class Key extends Sprite {
-    // what properties are associated with each player?
+    // what properties are associated with each key?
     constructor({collisionBlocks =[], imageSrc, frameRate, animations, loop}) {
         super({imageSrc, frameRate, animations, loop}) //call Sprite's constructor
 
@@ -40,7 +40,7 @@ class Key extends Sprite {
             //Player's "hasKey" property updated to true
             //disable input of e key; player can't pick up invisible key by mistake
         } else {
-            
+
         }
     }
 
