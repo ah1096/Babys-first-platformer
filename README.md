@@ -15,24 +15,24 @@ CURRENT VERSION: Baby's First Platformer (BFP) v.0.1 May 8, 2023
 
 =====CHANGELOG==================================================
 
-==> PICK UP A KEY UPDATE (BFP v.0.1)
-    A "key" item exists in the level, and the Player can pick it up.
+as of May 8th, 2023:
+    ==> PICK UP A KEY UPDATE (BFP v.0.1)
+        A "key" item exists in the level, and the Player can pick it up.
 
-    *ITEMS* 
-    DONE: an item exists in the level
-    DONE Player can interact with item on key press
-    DONE: Item disappears from the level when it is interacted with
+        *ITEMS* 
+        DONE: an item exists in the level
+        DONE Player can interact with item on key press
+        DONE: Item disappears from the level when it is interacted with
+
+    ==> UNLOCK THE DOOR UPDATE (BFP v.0.2)
+        Doors are locked by default upon Player spawn and the Player cannot enter them. If the Player has a key, the door can be unlocked and the Player can enter the door.
+
+        *DOORS*
+        DONE: Doors can be locked by default on level entrance 
+        DONE: Doors can be unlocked if Player has a key 
 
 =====UPCOMING CHANGES============================================
                                 (things that are definitely happening)
-
-
-==> UNLOCK THE DOOR UPDATE
-    Doors are locked by default upon Player spawn and the Player cannot enter them. If the Player has a key, the door can be unlocked and the Player can enter the door.
-
-    *DOORS*
-    DONE: Doors can be locked by default on level entrance 
-    DONE: Doors can be unlocked if Player has a key 
 
 
 ==> KEYCAT UPDATE 1 (Keycat v1.0)
