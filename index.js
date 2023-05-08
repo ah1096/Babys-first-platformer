@@ -227,7 +227,7 @@ function animate() {
 
     // itemKey.handleInput(keys)
     itemKey.draw() //this puts the key on the level
-    // itemKey.update()
+    itemKey.update()
 
     c.save() // combine with restore() @ bottom to apply the code inbetween
     c.globalAlpha = overlay.opacity //determines transparency of black rectangle
