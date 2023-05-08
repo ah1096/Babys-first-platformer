@@ -71,6 +71,9 @@ const player = new Player({
 const itemKey = new Key({
     imageSrc: './img/box.png',
     frameRate: 1,
+    // animations: {default: [0]},
+    // loop: true,
+    player: player
 })
 
 let level = 1
@@ -227,7 +230,7 @@ function animate() {
 
     // itemKey.handleInput(keys)
     itemKey.draw() //this puts the key on the level
-    itemKey.update()
+    itemKey.update(player)
 
     c.save() // combine with restore() @ bottom to apply the code inbetween
     c.globalAlpha = overlay.opacity //determines transparency of black rectangle

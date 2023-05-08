@@ -74,3 +74,8 @@ Made the key class; currently thinking about how to create + implement it
 - what methods does it have? what properties need to be updated? what event listeners does it have?
 - add it to index.js in a  similar way to Player clas, use dot notation throughout level to update 
         its properties
+
+...
+
+added collision detection between key + Player; player now triggers 
+    "colliding" console log when moving through the key object.
