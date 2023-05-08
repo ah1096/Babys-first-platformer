@@ -2,39 +2,102 @@
 My first ever attempt at making a platformer. 
 
 
-CURRENT VERSION: Baby's First Platformer (BFP) v.0 May 2, 2023
+CURRENT VERSION: Baby's First Platformer (BFP) v.0.1 May 8, 2023
 - Game uses assets from ChrisCourses video tutorial (linked in Resources)
 - Player can move using WAD keys: w = jump, a = left, d = right
 - Player can enter doors using the W key
 - Player can change levels by entering doors
 - Levels 1 through 3 exist
 - Upon entering level 3's door, Player is looped back to Level 1
+- Player can pick up a "key" item (currently a placeholder box image)
+- Key item moves out of playable area upon being picked up
 
-============================================UPCOMING CHANGES============================================
-                                (things that are definitely happening)
+
+=====CHANGELOG==================================================
 
 ==> PICK UP A KEY UPDATE (BFP v.0.1)
-    Doors are locked by default upon Player spawn and can be unlocked.
-    Player can pick up a "key" item, add it to their inventory, and unlock a door to progress to the next level.
+    A "key" item exists in the level, and the Player can pick it up.
 
     *ITEMS* 
-    <!-- TODO: Items exist in the level -->
-    <!-- TODO: Player can interact with items on key press -->
-    <!-- TODO: Items disappear from the level when they are interacted with -->
+    DONE: an item exists in the level
+    DONE Player can interact with item on key press
+    DONE: Item disappears from the level when it is interacted with
+
+=====UPCOMING CHANGES============================================
+                                (things that are definitely happening)
+
+
+==> UNLOCK THE DOOR UPDATE
+    Doors are locked by default upon Player spawn and the Player cannot enter them. If the Player has a key, the door can be unlocked and the Player can enter the door.
+
+    *DOORS*
+    <!-- TODO: Doors can be locked by default on level entrance -->
+    <!-- TODO: Doors can be unlocked if Player has a key -->
+
+
+==> KEYCAT UPDATE 1 (Keycat v1.0)
+    The game is now officially Keycat v.1! Fun part: styling.
+
+    *APPEARANCE*
+    <!-- TODO: add custom Keycat sprite for Player -->
+    <!-- TODO: add custom key sprite -->
+    <!-- TODO: center game canvas in middle of viewport; make it looks nicer -->
+    
+    
+==> KEYCAT: LEVEL UP UPDATE (Keycat v1.1)
+    Change the level backgrounds and create more levels
+
+    *APPEARANCE*
+    <!-- TODO: add custom art for levels 1-3 -->
+
+    *LEVELS*
+    <!-- TODO: create level 4 -->
+    <!-- TODO: create level 5 -->
+    <!-- TODO: create level 6 -->
+    <!-- TODO: create level 7 -->
+    <!-- TODO: create level 8 -->
+    <!-- TODO: create level 9 -->
+    <!-- TODO: create level 10 -->
+
+
+==> KEYCAT: FINISHING TOUCHES UPDATE (Keycat v1.2)
+    Make the game look more polished; smooth out any weird bits and make it pretty
+
+    *APPEARANCE*
+    <!-- TODO: add a title screen before level 1 loads -->
+    <!-- TODO: add a credits scene on level 3 door exit? -->
+    <!-- TODO: Keycat sprite has a little key in its mouth when hasKey = true -->
+
+    *MUSIC*
+    <!-- TODO: add custom music -->
+
+    *TESTING*
+    <!-- TODO: have 3 people play the game + suggest changes -->
+    <!-- TODO: evaluate + implement suggested changes -->
+
+
+
+=====STRETCH GOALS============================================
+                    (things that would be cool to have, but aren't a priority)
+
+==> INVENTORY UPDATE
+    the Player has an inventory that can store an item
+
+    *ITEMS*
     <!-- TODO: Interactible items show text ("Pick up {item}") at bottom of screen when they collide with player -->
 
     *INVENTORY*
     <!-- TODO: Inventory appears on screen -->
     <!-- TODO: Inventory can be opened and closed on key press -->
     <!-- TODO: Inventory can be updated; Player can add ("pick up") and remove ("drop") one item-->
+
+
+==> InVENTORY UPDATE 2
+    the Player has an inventory that can store multiple items
     <!-- TODO: Inventory can be updated; Player can add ("pick up") and remove ("drop") multiple items-->
 
-    *DOORS*
-    <!-- TODO: Doors can be locked by default on level entrance -->
-    <!-- TODO: Doors can be unlocked if Player has a key in their inventory -->
 
-
-==> TALK TO ME UPDATE (BFP v.0.2)
+==> TALK TO ME UPDATE
     NPCs exist in the world. The Player can interact with them to trigger dialog.
 
     *NPCs*
@@ -49,26 +112,6 @@ CURRENT VERSION: Baby's First Platformer (BFP) v.0 May 2, 2023
     <!-- TODO: NPCs can have multiple dialog boxes -->
     <!-- TODO: Player can advance to next dialog box on key press -->
 
-
-==> KEYCAT UPDATE 1
-    The game is now officially Keycat v.1
-
-    *APPEARANCE*
-    <!-- TODO: center game canvas in middle of viewport; make it looks nicer -->
-    <!-- TODO: add a title screen before level 1 loads -->
-    <!-- TODO: add a credits scene on level 3 door exit? -->
-    <!-- TODO: add custom Keycat sprite for Player -->
-    <!-- TODO: add custom NPC sprites -->
-    <!-- TODO: add custom item sprites -->
-    <!-- TODO: add custom level designs -->
-
-    *MUSIC*
-    <!-- TODO: add custom music -->
-
-    *TESTING*
-
-============================================STRETCH GOALS============================================
-                    (things that would be cool to have, but aren't a priority)
 
 ==> THREE'S A CROWD UPDATE
     Multiple NPCs can exist per level.
@@ -93,7 +136,7 @@ CURRENT VERSION: Baby's First Platformer (BFP) v.0 May 2, 2023
 
 
 
-============================================RESOURCES============================================
+=====RESOURCES============================================
 
 Initially built following this tutorial: 
     https://www.youtube.com/watch?v=Lcdc2v-9PjA&amp;t=2599s&amp;ab_channel=ChrisCourses
@@ -108,7 +151,7 @@ Tiled map editor:
     https://www.mapeditor.org/
 
 
-============================================NOTES============================================
+=====NOTES============================================
 GETTING COLLISION DATA FROM TILED:
     1. open level file in Tiled
     2. go to Collisions layer

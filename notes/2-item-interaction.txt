@@ -1,0 +1,35 @@
+DONE Player can interact with item on key press
+TODO: Item disappears from the level when it is interacted with
+
+- I want the player to be able to trigger an interaction with the key item upon pressing the e key
+- for now, just triggering a "you picked up a key" console log is fine
+
+currently the key logs "colliding" when the player collides with it; 
+I want to go where that chunk of code is and change it so that it says "press e" and if the player
+presses e, it logs "you picked up a key"
+
+
+added the code below so that if player is colliding AND pressing e, the text displays:
+
+handleInput(keys) {
+        
+        if (this.checkForCollisionWithPlayer() === true && keys.e.pressed === true) {
+            console.log("you picked up a key!")
+        } else {
+            return
+        }
+    }
+
+figure out how to make key disappear from level
+- create a removeFromLevel function? if key = pickedUp, then remove from level?
+- remove sprite? make invisible?
+- i could move the key out of reach of the player?
+
+going to try the out-of-reach approach
+
+it works!!! created the removeFromLevel() method in Key.js; right now the key item just
+    flies to the upper left corner of the screen. change this later so that paricular space
+    become a fake "inventory" the just shows whether you have the key or not. like this:
+         __________
+        | key: xx  | (pretend this is good ASCII art)
+         __________

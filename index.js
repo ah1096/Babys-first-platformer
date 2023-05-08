@@ -68,6 +68,14 @@ const player = new Player({
     },
 }) 
 
+const itemKey = new Key({
+    imageSrc: './img/box.png', //change to actual key later
+    frameRate: 1,
+    // animations: {default: [0]},
+    // loop: true,
+    player: player
+})
+
 let level = 1
 let levels = {
     1: {
@@ -75,6 +83,13 @@ let levels = {
             parsedCollisions = collisionsLevel1.parse2D()
             collisionBlocks = parsedCollisions.createObjectsFrom2D()
             player.collisionBlocks = collisionBlocks
+
+            itemKey.position.x = 400
+            itemKey.position.y = 353
+
+            //reset key
+            player.hasKey = false
+            itemKey.pickedUp = false
 
             if (player.currentAnimation) {
                 player.currentAnimation.isActive = false //reset player animation on spawn
@@ -117,6 +132,14 @@ let levels = {
             player.position.x = 96
             player.position.y = 140
 
+            //change key spawn position in this level
+            itemKey.position.x = 130
+            itemKey.position.y = 480
+
+            //reset key
+            player.hasKey = false
+            itemKey.pickedUp = false
+
             background= new Sprite({
                 position: {
                     x: 0,
@@ -153,6 +176,14 @@ let levels = {
             //change player spawn position in this level
             player.position.x = 785
             player.position.y = 220
+
+            //change key spawn position in this level
+            itemKey.position.x = 790
+            itemKey.position.y = 353
+
+            //reset key
+            player.hasKey = false
+            itemKey.pickedUp = false
 
             background= new Sprite({
                 position: {
@@ -192,6 +223,9 @@ const keys = {
     d: {
         pressed: false,
     },
+    e: {
+        pressed: false,
+    },
 }
 
 const overlay = {
@@ -216,6 +250,13 @@ function animate() {
     player.handleInput(keys)
     player.draw()
     player.update()
+
+    //check if Key.js's handleInput is working
+    console.log("does player have key?", player.hasKey)
+
+    itemKey.pickUpItem(keys)
+    itemKey.draw() //this puts the key on the level
+    itemKey.update(player)
 
     c.save() // combine with restore() @ bottom to apply the code inbetween
     c.globalAlpha = overlay.opacity //determines transparency of black rectangle
