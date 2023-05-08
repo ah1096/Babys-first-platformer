@@ -10,14 +10,14 @@ CURRENT VERSION: Baby's First Platformer (BFP) v.0 May 2, 2023
 - Levels 1 through 3 exist
 - Upon entering level 3's door, Player is looped back to Level 1
 
-============================================UPCOMING CHANGES============================================
+=====UPCOMING CHANGES============================================
                                 (things that are definitely happening)
 
 ==> PICK UP A KEY UPDATE (BFP v.0.1)
     A "key" item exists in the level, and the Player can pick it up.
 
     *ITEMS* 
-    <!-- TODO: an item exists in the level -->
+    DONE: an item exists in the level
     <!-- TODO: Player can interact with item on key press -->
     <!-- TODO: Item disappears from the level when it is interacted with -->
 
@@ -81,7 +81,7 @@ CURRENT VERSION: Baby's First Platformer (BFP) v.0 May 2, 2023
 
     *TESTING*
 
-============================================STRETCH GOALS============================================
+=====STRETCH GOALS============================================
                     (things that would be cool to have, but aren't a priority)
 
 ==> THREE'S A CROWD UPDATE
@@ -107,7 +107,7 @@ CURRENT VERSION: Baby's First Platformer (BFP) v.0 May 2, 2023
 
 
 
-============================================RESOURCES============================================
+=====RESOURCES============================================
 
 Initially built following this tutorial: 
     https://www.youtube.com/watch?v=Lcdc2v-9PjA&amp;t=2599s&amp;ab_channel=ChrisCourses
@@ -122,7 +122,7 @@ Tiled map editor:
     https://www.mapeditor.org/
 
 
-============================================NOTES============================================
+=====NOTES============================================
 GETTING COLLISION DATA FROM TILED:
     1. open level file in Tiled
     2. go to Collisions layer

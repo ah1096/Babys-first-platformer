@@ -64,3 +64,18 @@ I tried adding the e key event listener and it doesn't work; come back to this l
 
 Giving up on the door method and making a Key class instead.
 Scrapping this item branch and making a new one called key-class.
+
+...
+
+Made the key class; currently thinking about how to create + implement it
+
+- construct it similarly to Player class
+- What properties does it have?
+- what methods does it have? what properties need to be updated? what event listeners does it have?
+- add it to index.js in a  similar way to Player clas, use dot notation throughout level to update 
+        its properties
+
+...
+
+added collision detection between key + Player; player now triggers 
+    "colliding" console log when moving through the key object.
