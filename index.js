@@ -43,26 +43,28 @@ const player = new Player({
             loop: false,
             imageSrc: './img/king/enterDoor.png',
             onComplete: () => {
-                console.log('completed animation')
-                gsap.to(overlay, { //use gsap library to animate opacity from 0 to 1
-                    opacity: 1,
-                    onComplete: () => {
-                        level++ //go to next level
+                    // console.log("enterDoor hasKey check 1:", player.hasKey)
+                    console.log('completed animation')
+                    gsap.to(overlay, { //use gsap library to animate opacity from 0 to 1
+                        opacity: 1,
+                        onComplete: () => {
+                            
+                            level++ //go to next level
 
-                        //level 4 doesn't exist right now, so loop back to start
-                        //modify this code when game has an actual ending to roll credits or something
-                        if (level === 4) {
-                            level = 1 
+                            //level 4 doesn't exist right now, so loop back to start
+                            //modify this code when game has an actual ending to roll credits or something
+                            if (level === 4) {
+                                level = 1 
+                            }
+
+                            levels[level].init()
+                            player.switchSprite('idleRight') //switches sprite on next level after door open
+                            player.preventInput = false //allows key input after spawning into next level
+                            gsap.to(overlay, {
+                                opacity: 0,
+                            })
                         }
-
-                        levels[level].init()
-                        player.switchSprite('idleRight') //switches sprite on next level after door open
-                        player.preventInput = false //allows key input after spawning into next level
-                        gsap.to(overlay, {
-                            opacity: 0,
-                        })
-                    }
-                })
+                    })
             },
         },
     },
