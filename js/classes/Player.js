@@ -47,7 +47,7 @@ class Player extends Sprite {
 
         this.checkForVerticalCollisions()
     }
-
+   
     handleInput(keys) {
         if (this.preventInput) {return}
         this.velocity.x = 0

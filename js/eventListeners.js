@@ -29,6 +29,9 @@ window.addEventListener('keydown', (event) => {
         case 'd': //move player right
             keys.d.pressed = true
             break
+        case 'e': //trigger item interaction
+            keys.e.pressed = true
+            break
 
     }
 })

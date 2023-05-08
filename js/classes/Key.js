@@ -74,7 +74,15 @@ class Key extends Sprite {
             console.log('player hitbox is undefined')
             return false
         }
+    }
 
+    handleInput(keys) {
+        
+        if (keys.e.pressed) {
+            console.log("you picked up a key!")
+        } else {
+            return
+        }
     }
 
 

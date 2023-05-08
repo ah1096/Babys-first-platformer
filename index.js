@@ -211,6 +211,9 @@ const keys = {
     d: {
         pressed: false,
     },
+    e: {
+        pressed: false,
+    },
 }
 
 const overlay = {
@@ -236,7 +239,7 @@ function animate() {
     player.draw()
     player.update()
 
-    // itemKey.handleInput(keys)
+    itemKey.handleInput(keys)
     itemKey.draw() //this puts the key on the level
     itemKey.update(player)
 
