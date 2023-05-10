@@ -39,9 +39,9 @@ as of May 8th, 2023:
     The game is now officially Keycat v.1! Fun part: styling.
 
     *APPEARANCE*
+    DONE: center game canvas in middle of viewport; make it looks nicer
     <!-- TODO: add custom Keycat sprite for Player -->
     <!-- TODO: add custom key sprite -->
-    <!-- TODO: center game canvas in middle of viewport; make it looks nicer -->
     
     
 ==> KEYCAT: LEVEL UP UPDATE (Keycat v1.1)
