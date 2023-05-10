@@ -1,0 +1,5 @@
+TODO: center game canvas in middle of viewport; make it looks nicer
+
+- center game canvas in middle of viewport
+- add a title heading?
+- add the controls in a small box below the canvas
