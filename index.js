@@ -10,20 +10,20 @@ let collisionBlocks
 let background
 let doors 
 const player = new Player({
-    imageSrc: './img/king/idle.png',
+    imageSrc: './img/keycat/keycat_idle.png',
     frameRate: 11,
     animations: {
         idleRight: {
-            frameRate: 11, //number of frames in sprite png
+            frameRate: 13, //number of frames in sprite png
             frameBuffer: 2, //change this number to change sprite change speed
             loop: true,
-            imageSrc: './img/king/idle.png',
+            imageSrc: './img/keycat/keycat_idle.png',
         },
         idleLeft: {
-            frameRate: 11,
+            frameRate: 13,
             frameBuffer: 2,
             loop: true,
-            imageSrc: './img/king/idleLeft.png',
+            imageSrc: './img/keycat/keycat_idleLeft.png',
         },
         runRight: {
             frameRate: 8,
