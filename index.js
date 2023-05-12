@@ -29,13 +29,13 @@ const player = new Player({
             frameRate: 8,
             frameBuffer: 4,
             loop: true,
-            imageSrc: './img/king/runRight.png',
+            imageSrc: './img/keycat/keycat_runRight.png',
         },
         runLeft: {
             frameRate: 8,
             frameBuffer: 4,
             loop: true,
-            imageSrc: './img/king/runLeft.png',
+            imageSrc: './img/keycat/keycat_runLeft.png',
         },
         enterDoor: {
             frameRate: 8,
