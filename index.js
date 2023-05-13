@@ -41,7 +41,7 @@ const player = new Player({
             frameRate: 8,
             frameBuffer: 4,
             loop: false,
-            imageSrc: './img/king/enterDoor.png',
+            imageSrc: './img/keycat/keycat_enterDoor.png',
             onComplete: () => {
                     // console.log("enterDoor hasKey check 1:", player.hasKey)
                     console.log('completed animation')
