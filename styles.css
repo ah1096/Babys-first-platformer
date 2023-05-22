@@ -12,11 +12,37 @@ body {
     font-family: 'Press Start 2P', cursive;
 }
 
+@media (max-width: 600px) {
+    body {
+        background: blue; 
+        /* testing responsiveness */
+    }
+    .container {
+        max-width: 100%;
+        padding: 10px;
+        box-sizing: border-box;
+    }
+
+    h3 {
+        font-size: x-small;
+        /* this doesn't work; change it later so that the font doesn't look gross */
+    }
+}
+
 .container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content:center;
+    justify-content: center;
+    max-width: 900px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+canvas {
+    display: block;
+    max-width: 100%;
+    height: auto;
 }
 
 h3 {

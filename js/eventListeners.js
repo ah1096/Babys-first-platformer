@@ -76,7 +76,7 @@ window.addEventListener('keyup', (event) => {
 
 function resetHelpText() {
     const helptext = document.getElementById("helptext")
-    helptext.innerText = "A = move left   D = move right   W = jump + open door   E = pickup item"
+    helptext.innerText = "A = left   D = right   W = jump + open door   E = pick up"
 }
 
 function generateHelpText() {
