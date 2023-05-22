@@ -1,0 +1,8 @@
+what i'm doing:
+1. break down current asset's animation cycle frame by frame
+2. draw initial sprite for Keycat
+3. match animation cycle to frames of old assets
+
+also drawing a key that's the same size of the box.png image
+the key looks gross but i'll change it when i'm better at pixel art and want 
+    to spend more than 15 minutes on it
