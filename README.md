@@ -40,11 +40,8 @@ as of May 8th, 2023:
 
     *APPEARANCE*
     DONE: center game canvas in middle of viewport; make it looks nicer
-    <!-- TODO: add custom Keycat sprite for Player -->
-        <!-- TODO: idle sprite (flip for opposite direction) -->
-        <!-- TODO: run sprite (flip for opposite direction) -->
-        <!-- TODO: openDoor sprite -->
-    <!-- TODO: add custom key sprite -->
+    DONE: add custom Keycat sprite for Player
+    DONE: add custom key sprite
     
     
 ==> KEYCAT: LEVEL UP UPDATE (Keycat v1.1)
