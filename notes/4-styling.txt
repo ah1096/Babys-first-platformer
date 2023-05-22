@@ -1,0 +1,8 @@
+DONE: center game canvas in middle of viewport; make it looks nicer
+
+- center game canvas in middle of viewport
+- add a title heading?
+- add the controls in a small box below the canvas
+
+maybe add a title screen later to play on page refresh; currently the 
+headings spawn in before the game canvas and it looks weird

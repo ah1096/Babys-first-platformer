@@ -15,7 +15,7 @@ CURRENT VERSION: Baby's First Platformer (BFP) v.0.1 May 8, 2023
 
 =====CHANGELOG==================================================
 
-as of May 8th, 2023:
+as of May 22nd, 2023:
     ==> PICK UP A KEY UPDATE (BFP v.0.1)
         A "key" item exists in the level, and the Player can pick it up.
 
@@ -31,19 +31,17 @@ as of May 8th, 2023:
         DONE: Doors can be locked by default on level entrance 
         DONE: Doors can be unlocked if Player has a key 
 
+    ==> KEYCAT UPDATE 1
+        The game is now officially Keycat v.1! Fun part: styling.
+
+        *APPEARANCE*
+        DONE: center game canvas in middle of viewport; make it looks nicer
+        DONE: add custom Keycat sprite for Player
+        DONE: add custom key sprite
+
 =====UPCOMING CHANGES============================================
                                 (things that are definitely happening)
 
-
-==> KEYCAT UPDATE 1 (Keycat v1.0)
-    The game is now officially Keycat v.1! Fun part: styling.
-
-    *APPEARANCE*
-    <!-- TODO: add custom Keycat sprite for Player -->
-    <!-- TODO: add custom key sprite -->
-    <!-- TODO: center game canvas in middle of viewport; make it looks nicer -->
-    
-    
 ==> KEYCAT: LEVEL UP UPDATE (Keycat v1.1)
     Change the level backgrounds and create more levels
 
