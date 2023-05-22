@@ -31,7 +31,7 @@ window.addEventListener('keydown', (event) => {
                 ) {
                     player.velocity.y = -1
                     console.log("enterDoor hasKey check 2:", player.hasKey)
-                    console.log("you need the key to proceed")
+                    generateHelpText()
                     player.switchSprite('idleRight')
                     player.preventInput = false
                 } 
@@ -71,3 +71,17 @@ window.addEventListener('keyup', (event) => {
             break
     }
 })
+
+
+
+function resetHelpText() {
+    const helptext = document.getElementById("helptext")
+    helptext.innerText = "A = move left   D = move right   W = jump + open door   E = pickup item"
+}
+
+function generateHelpText() {
+    const helptext = document.getElementById("helptext")
+    helptext.innerText = "you need the key to proceed"
+    setTimeout(resetHelpText, 3000)
+    
+}
