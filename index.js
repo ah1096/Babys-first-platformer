@@ -10,38 +10,38 @@ let collisionBlocks
 let background
 let doors 
 const player = new Player({
-    imageSrc: './img/king/idle.png',
+    imageSrc: './img/keycat/keycat_idle.png',
     frameRate: 11,
     animations: {
         idleRight: {
-            frameRate: 11, //number of frames in sprite png
+            frameRate: 13, //number of frames in sprite png
             frameBuffer: 2, //change this number to change sprite change speed
             loop: true,
-            imageSrc: './img/king/idle.png',
+            imageSrc: './img/keycat/keycat_idle.png',
         },
         idleLeft: {
-            frameRate: 11,
+            frameRate: 13,
             frameBuffer: 2,
             loop: true,
-            imageSrc: './img/king/idleLeft.png',
+            imageSrc: './img/keycat/keycat_idleLeft.png',
         },
         runRight: {
             frameRate: 8,
             frameBuffer: 4,
             loop: true,
-            imageSrc: './img/king/runRight.png',
+            imageSrc: './img/keycat/keycat_runRight.png',
         },
         runLeft: {
             frameRate: 8,
             frameBuffer: 4,
             loop: true,
-            imageSrc: './img/king/runLeft.png',
+            imageSrc: './img/keycat/keycat_runLeft.png',
         },
         enterDoor: {
             frameRate: 8,
             frameBuffer: 4,
             loop: false,
-            imageSrc: './img/king/enterDoor.png',
+            imageSrc: './img/keycat/keycat_enterDoor.png',
             onComplete: () => {
                     // console.log("enterDoor hasKey check 1:", player.hasKey)
                     console.log('completed animation')
@@ -71,7 +71,7 @@ const player = new Player({
 }) 
 
 const itemKey = new Key({
-    imageSrc: './img/box.png', //change to actual key later
+    imageSrc: './img/key.png',
     frameRate: 1,
     // animations: {default: [0]},
     // loop: true,
