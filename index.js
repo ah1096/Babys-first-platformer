@@ -54,7 +54,8 @@ const player = new Player({
                             //level 4 doesn't exist right now, so loop back to start
                             //modify this code when game has an actual ending to roll credits or something
                             if (level === 4) {
-                                level = 1 
+                                endGame()
+                                // level = 1 
                             }
 
                             levels[level].init()
@@ -209,7 +210,7 @@ let levels = {
                 })
             ]
         }
-    }
+    },
 }
 
 
@@ -265,6 +266,48 @@ function animate() {
     c.fillStyle = 'black'
     c.fillRect(0,0,canvas.width, canvas.height)
     c.restore()
+}
+
+function rollCredits() {
+    const container = document.getElementById("container")
+
+    container.innerHTML = `
+        <h3 style= "text-align: center;"> 
+            Thanks for playing the demo! 
+        </h3>
+
+        <h5 style = "text-align: center;"> 
+            refresh your browser to play again, <br> or visit my portfolio to leave some feedback! 
+        </h5>
+
+        <button style="
+            padding: 10px;
+            border-radius: 15;
+            background-color: white;
+            border: none;"
+            > 
+            <a 
+                href="https://ah1096.github.io/developer-portfolio/" 
+                target="blank"
+                style="
+                    text-decoration: none;
+                    color: red;
+                    font-family: 'Press Start 2P', cursive;
+                    font-size: 8px;
+                "
+            > 
+                portfolio 
+            </a> 
+        </button>
+    `
+
+}
+
+function endGame() {
+    const container = document.getElementById("container")
+    container.innerHTML = ""
+    setTimeout(rollCredits, 2000)
+    level == 1
 }
 
 levels[level].init()
